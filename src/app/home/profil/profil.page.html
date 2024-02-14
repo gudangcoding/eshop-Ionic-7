@@ -1,0 +1,57 @@
+<ion-header>
+  
+</ion-header>
+
+<ion-content>
+  <h1 class="title">Profile</h1>
+
+  <div class="profile-info">
+  
+    <div class="profile-picture" (click)="takePicture(profil.id_member)">
+      <img src="{{profil.foto}}" *ngIf="profil.foto" alt="Profile">
+      <ion-icon name="camera-outline" (click)="takePicture(profil.id_member)"></ion-icon>
+    </div>
+
+    <div class="profile-picture" (click)="takePicture(profil.id_member)">
+      <img [src]="profilePhoto" *ngIf="!profil.foto" alt="Profile">
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Nama</ion-label>
+      <ion-input [(ngModel)]="profil.nama"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="profil.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Hp</ion-label>
+      <ion-input [(ngModel)]="profil.telepon"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Alamat</ion-label>
+      <ion-input [(ngModel)]="profil.alamat"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password Lama</ion-label>
+      <ion-input [(ngModel)]="profil.password_lama"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password Baru</ion-label>
+      <ion-input [(ngModel)]="profil.password_baru"></ion-input>
+    </ion-item>
+   
+
+  
+ 
+    <ion-button (click)="edit()" expand="block" color="success">
+      Edit
+    </ion-button>
+    <ion-button (click)="logout()" expand="block" color="danger">
+      Logout
+    </ion-button>
+  </div>
+</ion-content>

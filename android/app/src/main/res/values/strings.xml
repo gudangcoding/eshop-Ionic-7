@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Amsis Mobile</string>
+    <string name="title_activity_main">Amsis Mobile</string>
+    <string name="package_name">io.lkpnaura.userapp</string>
+    <string name="custom_url_scheme">io.lkpnaura.userapp</string>
+</resources>

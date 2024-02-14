@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="success">
+
+    <ion-buttons slot="end">
+
+      <ion-button class="notification" routerLink="/cart">
+        <ion-icon name="cart-outline"></ion-icon>
+        <!-- <ion-badge color="danger">3</ion-badge> -->
+        <span>&nbsp;</span>
+      </ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+  <div class="order-items" *ngFor="let item of products ;let i=index">
+    <ion-card mode="ios">
+      <ion-card-content>
+        <div class="item-info">
+          <p>ID : {{item.id_penjualan}}</p>
+          <p>Item : {{item.total_item}}</p>
+          <p>Total : {{item.total_harga | currency:'Rp '}}</p>
+          <p>Status : {{item.status}}</p>
+          <ion-button *ngIf="item.status === 'Pending'" (click)="takePicture(item.id_penjualan)" expand="block"
+            color="warning" class="main-button">Bayar Sekarang</ion-button>
+          <ion-button *ngIf="item.bukti_bayar === 'Dibayar'" expand="block" color="success"
+            class="main-button">Lunas</ion-button>
+          <ion-button *ngIf="item.bukti_bayar === 'Dikirim'" expand="block" color="success"
+            class="main-button">Dikirim</ion-button>
+          <ion-button *ngIf="item.bukti_bayar === 'Diterima'" expand="block" color="success"
+            class="main-button">Diterima</ion-button>
+          <ion-button *ngIf="item.bukti_bayar === 'Selesai'" expand="block" color="success"
+            class="main-button">Selesai</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+</div>
+
+</ion-content>

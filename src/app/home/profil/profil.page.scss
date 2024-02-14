@@ -1,0 +1,61 @@
+.backbtn {
+    margin-left: 15px;
+}
+
+.notification {
+    margin-right: 15px;
+}
+
+ion-content {
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+    --padding-start: 26px;
+    --padding-end: 26px;
+}
+
+.title {
+    margin-top: 0;
+    color: #434343;
+}
+
+.profile-info {
+    padding-top: 20px;
+
+    ion-item {
+        --padding-start: 0;
+        --border-color: #97979713;
+
+        ion-label {
+            color: #919191;
+            font-size: larger;
+        }
+
+        ion-input {
+            --color: #434343;
+        }
+    }
+}
+
+.profile-picture {
+    text-align: center;
+    margin-top: 20px;
+  
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+  }
+
+  ion-avatar {
+    position: relative;
+  }
+  
+  ion-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 20px; /* Sesuaikan ukuran ikon sesuai kebutuhan Anda */
+    color: white; /* Sesuaikan warna ikon sesuai kebutuhan Anda */
+    cursor: pointer;
+  }

@@ -1,0 +1,139 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <span>&nbsp;</span>
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <span>&nbsp;</span>
+      Halo Annas
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="notification" routerLink="/cart">
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-badge color="danger">3</ion-badge>
+        <span></span>
+      </ion-button>
+      <ion-button class="notification" routerLink="/cart">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-badge color="danger">3</ion-badge>
+        <span>&nbsp;</span>
+      </ion-button>
+      <ion-button class="filter">
+        <ion-icon name="notifications-outline"></ion-icon>
+        <ion-badge color="danger">3</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+ <ion-content fullscreen="true">
+
+  
+  
+  <div class="cart-items">
+    <ion-buttons slot="start">
+      <ion-checkbox mode="md" (click)="checkAll()"></ion-checkbox> Pilih Semua
+    <ion-icon slot="end" name="trash" class="ikonsampah"></ion-icon>
+    </ion-buttons>
+    <ion-card mode="ios"  *ngFor="let item of isikeranjang; let i = index">
+      <ion-card-content>
+        <ion-checkbox class="cek" mode="md"  [(ngModel)]="item.checked"></ion-checkbox>
+        <div class="item-img">
+          <img src="../../../assets/cart/cart1.png" />
+        </div>
+
+        <div class="item-info">
+          <p>Women t-shirt</p>
+          <p>Lotto.LTD</p>
+          <p>$34.00</p>
+
+          <div class="qty-selector">
+            <ion-button fill="clear">-</ion-button>
+            <ion-label>1</ion-label>
+            <ion-button fill="clear">+</ion-button>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card mode="ios">
+      <ion-card-content>
+        <div class="item-img">
+          <img src="../../../assets/cart/cart2.png" />
+        </div>
+
+        <div class="item-info">
+          <p>Female t-shirt</p>
+          <p>Bata</p>
+          <p>$44.00</p>
+
+          <div class="qty-selector">
+            <ion-button fill="clear">-</ion-button>
+            <ion-label>1</ion-label>
+            <ion-button fill="clear">+</ion-button>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card mode="ios">
+      <ion-card-content>
+        <div class="item-img">
+          <img src="../../../assets/cart/cart3.png" />
+        </div>
+
+        <div class="item-info">
+          <p>Shirt</p>
+          <p>Next</p>
+          <p>$54.00</p>
+
+          <div class="qty-selector">
+            <ion-button fill="clear">-</ion-button>
+            <ion-label>1</ion-label>
+            <ion-button fill="clear">+</ion-button>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card mode="ios">
+      <ion-card-content>
+        <div class="item-img">
+          <img src="../../../assets/cart/cart4.png" />
+        </div>
+
+        <div class="item-info">
+          <p>Women shirt</p>
+          <p>Plus Point</p>
+          <p>$34.00</p>
+
+          <div class="qty-selector">
+            <ion-button fill="clear">-</ion-button>
+            <ion-label>1</ion-label>
+            <ion-button fill="clear">+</ion-button>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card mode="ios">
+      <ion-card-content>
+        <div class="item-img">
+          <img src="../../../assets/cart/cart5.png" />
+        </div>
+
+        <div class="item-info">
+          <p>Shirt</p>
+          <p>Cat's Eye</p>
+          <p>$44.00</p>
+
+          <div class="qty-selector">
+            <ion-button fill="clear">-</ion-button>
+            <ion-label>1</ion-label>
+            <ion-button fill="clear">+</ion-button>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content> 
+

@@ -1,0 +1,81 @@
+.welcome-card img {
+    max-height: 35vh;
+    overflow: hidden;
+  }
+  ion-card p{    
+    font-size: 15px;
+    text-align: center;
+    line-height: 20px;
+    height: 40px;
+    overflow: hidden;
+    margin-bottom: 2px;
+    margin-top: 6px; }
+  
+  // .produk{
+  //   height: 250px;
+  // }
+
+  ion-icon {
+    font-size: 30px; 
+  }
+  
+  ion-row{margin-left: 0px; margin-right: 0px;}
+  
+  .box button{background:none;}
+
+
+  swiper-container {
+    --swiper-pagination-bullet-inactive-color: var(--ion-color-step-200, #cccccc);
+    --swiper-pagination-color: var(--ion-color-primary, #3880ff);
+    --swiper-pagination-progressbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.25);
+    --swiper-scrollbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
+    --swiper-scrollbar-drag-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.5);
+  }
+  
+  swiper-slide {
+    display: flex;
+    position: relative;
+  
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+  
+    width: 100%;
+    height: 100%;
+  
+    font-size: 18px;
+  
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  swiper-slide img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+  }
+
+  ion-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  ion-col {
+    display: flex;
+    flex: 1;
+    // margin: 10px; /* Gantilah dengan margin yang diinginkan */
+  }
+
+  ion-icon {
+    position: relative;
+  
+    ion-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%); /* Untuk membuat badge tepat di pojok atas */
+    }
+  }
+  

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button
+        color="primary"
+        class="backbtn"
+        routerLink="/home/beranda"
+        routerDirection="back"
+      >
+        <img src="../../../assets/back-dark.svg" />
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button class="notification">
+        <ion-icon name="notifications-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-searchbar
+    placeholder="Cari Produk"
+    type="text"
+    [(ngModel)]="searchTerm"
+    (ionChange)="onSearchChange(searchTerm)"
+  ></ion-searchbar>
+
+
+  <ion-row class="favorite-items" *ngIf="products">
+    <ion-col size="6" class="ion-text-left padding-left0" *ngFor="let a of products" (click)="detail(a.id_produk)">
+      <img src="{{a.gambar}}" width="300" height="200"/>
+      <p>{{a.harga_jual | currency:'Rp '}}</p>
+      <h6>{{a.nama_produk}}</h6>
+    </ion-col>
+    
+  </ion-row>
+  <h3 *ngIf="!products">Tidak ada produk</h3>
+</ion-content>

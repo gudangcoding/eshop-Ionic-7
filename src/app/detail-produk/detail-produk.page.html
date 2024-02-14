@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button
+        color="primary"
+        class="backbtn"
+        routerLink="/home/beranda"
+        routerDirection="back"
+      >
+        <img src="../../../assets/back-dark.svg" />
+      </ion-button>
+    </ion-buttons>
+
+    <!-- <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="search-outline" color="dark"></ion-icon>
+      </ion-button>
+      <ion-button class="notification">
+        <ion-icon name="notifications-outline" color="dark"></ion-icon>
+        <span>&nbsp;</span>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-slides pager="true" class="product-slider">
+    <ion-slide>
+      <img src="../../../assets/product-slider/prod-slide1.png" />
+    </ion-slide>
+    <ion-slide>
+      <img src="../../../assets/product-slider/prod-slide1.png" />
+    </ion-slide>
+    <ion-slide>
+      <img src="../../../assets/product-slider/prod-slide1.png" />
+    </ion-slide>
+  </ion-slides> -->
+
+  <div class="ion-padding-vertical">
+    <div class="product-container">
+      <swiper-container
+        effect="cube"
+        [slidesPerView]="3"
+        [loop]="true"
+        pagination="true"
+      >
+        <!-- cara pakai swiper js
+                        1. npm install swiper
+
+                        2. jangan lupa tambahkan ini di beranda.module.ts
+
+                        import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+                        @NgModule({
+                          schemas: [..., CUSTOM_ELEMENTS_SCHEMA]
+                        });
+                        3. jangan lupa tambahkan ini di app.component.ts
+                        import { register } from 'swiper/element/bundle';
+                        register();
+
+                        @Component({
+                          ...
+                        })
+                        ... -->
+        <swiper-slide >
+          <img [src]="products.gambar" alt="" width="500" height="300" />
+        </swiper-slide>
+      </swiper-container>
+
+      <div class="product-info">
+        <div class="satu">
+          <h1 class="item-name">{{products.nama_produk}}</h1>
+          <h4 class="price">
+            {{products?.harga_jual | currency:'Rp '}}
+            <!-- <span class="real-price">Harga Diskon {{products?.price | currency:'Rp '}}</span> -->
+          </h4>
+        </div>
+
+        <!-- <div class="dua">
+          <ion-icon
+          name="heart"
+          class="wishlist-icon"
+          [ngClass]="{'wishlist-added': isWishlistAdded}"
+          (click)="addToWishlist(products.id_produk)"
+        ></ion-icon>
+        </div> -->
+      </div>
+    </div>
+
+    
+  </div>
+
+
+</ion-content>
+<ion-footer>
+  <ion-row>
+    <!-- <ion-col size="6">
+      <ion-button expand="full" color="light" (click)="addToCart()"
+        >Keranjang</ion-button
+      >
+    </ion-col> -->
+    <ion-col>
+      <ion-button expand="full" color="success" (click)="addToCart()"
+        >Beli</ion-button
+      >
+    </ion-col>
+  </ion-row>
+</ion-footer>
