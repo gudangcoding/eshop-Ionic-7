@@ -27,7 +27,7 @@ export class CartPage implements OnInit {
     private router: Router,
     private util: Helper,
     private api: RestApi,
-    private api2: ApiService,
+    private api2: ApiService
   ) {
     this.products = cartService.getCart('cart');
     this.total = cartService.getCart('total');
@@ -36,7 +36,7 @@ export class CartPage implements OnInit {
     console.log('Total atas : ', this.user);
   }
 
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     this.products = this.cartService.getCart('cart');
     this.total = this.cartService.getCart('total');
     this.total = this.cartService.getCart('qty');
@@ -255,10 +255,10 @@ export class CartPage implements OnInit {
       };
       this.api
         .postWithToken(body, 'order/store', this.user.token)
-        .subscribe((res:any) => {
+        .subscribe((res: any) => {
           this.util.dismissLoading();
           console.log(res);
-          if (res.success==true) {
+          if (res.success == true) {
             this.delAll();
             // this.util.alertNotif('Berhasil Diorder, SIlahkan lakukan pembayaran');
             this.router.navigateByUrl('home/history');
