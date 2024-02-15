@@ -22,7 +22,7 @@ export class CartPage implements OnInit {
   checkedCount = 1;
   akandibayar: any[] = [];
   user: any;
-  metode_bayar: any;
+  metode_bayar: any="";
   constructor(
     private cartService: CartService,
     private router: Router,
@@ -229,7 +229,10 @@ export class CartPage implements OnInit {
       this.akandibayar = this.products.filter(
         (product) => product.checked === true
       );
-
+      if (this.metode_bayar==="") {
+        this.util.toastNotif('Metode bayar belum dipilih');
+        return;
+      }
       // const dataToSend = {
       //   items: this.akandibayar,
       //   jumlah_harga: this.total,
