@@ -225,9 +225,9 @@ export class CartPage implements OnInit {
     // }
     // this.products= JSON.parse(cartData);
     if (this.products) {
-      // this.akandibayar = this.products.filter(
-      //   (product) => product.checked === true
-      // );
+      this.akandibayar = this.products.filter(
+        (product) => product.checked === true
+      );
       // const dataToSend = {
       //   items: this.akandibayar,
       //   jumlah_harga: this.total,
