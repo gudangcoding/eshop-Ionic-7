@@ -22,6 +22,7 @@ export class CartPage implements OnInit {
   checkedCount = 1;
   akandibayar: any[] = [];
   user: any;
+  metode_bayar:any;
   constructor(
     private cartService: CartService,
     private router: Router,
@@ -252,6 +253,7 @@ export class CartPage implements OnInit {
         items: this.akandibayar,
         jumlah_harga: this.total,
         qty: this.qty,
+        metode_bayar: this.metode_bayar,
       };
       this.api
         .postWithToken(body, 'order/store', this.user.token)

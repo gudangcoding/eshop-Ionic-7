@@ -82,11 +82,23 @@
       </ion-label>
     </ion-col>
   </ion-row>
+
+  <ion-row>
+    <ion-list>
+      <ion-item>
+        <ion-label location="floating">Pembayaran</ion-label>
+        <ion-select value="pembayaran" [(ngModel)]="metode_bayar" placeholder="Pilih Pembayaran">
+          <ion-select-option value="COD">COD</ion-select-option>
+          <ion-select-option value="Transfer">Transfer</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </ion-row>
+
 </ion-content>
 
 <ion-footer>
-
-    <ion-button expand="block" color="success" (click)="bayar()"> Selanjutnya </ion-button>
-
+  <ion-button expand="block" color="success" (click)="bayar()">
+    Selanjutnya
+  </ion-button>
 </ion-footer>
-
