@@ -22,7 +22,7 @@ export class CartPage implements OnInit {
   checkedCount = 1;
   akandibayar: any[] = [];
   user: any;
-  metode_bayar:any;
+  metode_bayar: any;
   constructor(
     private cartService: CartService,
     private router: Router,
@@ -218,7 +218,7 @@ export class CartPage implements OnInit {
   }
 
   async bayar(): Promise<any> {
-    this.util.showLoading();
+    
     // const cartData = localStorage.getItem('cart');
     // if (!cartData) {
     //   console.error('Cart data not found in local storage');
@@ -247,27 +247,35 @@ export class CartPage implements OnInit {
       // } else {
       //   this.util.toastNotif('Transaksi Gagal, server error');
       // }
-
-      let body = {
-        id_member: this.user.id_member,
-        items: this.akandibayar,
-        jumlah_harga: this.total,
-        qty: this.qty,
-        metode_bayar: this.metode_bayar,
-      };
-      this.api
-        .postWithToken(body, 'order/store', this.user.token)
-        .subscribe((res: any) => {
-          this.util.dismissLoading();
-          console.log(res);
-          if (res.success == true) {
-            this.delAll();
-            // this.util.alertNotif('Berhasil Diorder, SIlahkan lakukan pembayaran');
-            this.router.navigateByUrl('home/history');
-            this.util.toastNotif('Order SUkses Dibuat');
-            // Browser.open({ url: res.url});
-          }
-        });
-    }
+      console.log('jumlah dipilih : ',this.akandibayar.length);
+      if (this.akandibayar.length > 0) {
+        
+        
+        this.util.showLoading();
+        let body = {
+          id_member: this.user.id_member,
+          items: this.akandibayar,
+          jumlah_harga: this.total,
+          qty: this.qty,
+          metode_bayar: this.metode_bayar,
+        };
+        this.api
+          .postWithToken(body, 'order/store', this.user.token)
+          .subscribe((res: any) => {
+            this.util.dismissLoading();
+            console.log(res);
+            if (res.success == true) {
+              this.delAll();
+              // this.util.alertNotif('Berhasil Diorder, SIlahkan lakukan pembayaran');
+              this.router.navigateByUrl('home/history');
+              this.util.toastNotif('Order SUkses Dibuat');
+              // Browser.open({ url: res.url});
+            }
+          });
+        }else{
+          this.util.toastNotif('Belum ada produk yang dipilih');
+        }
+      }
+    
   }
 }
