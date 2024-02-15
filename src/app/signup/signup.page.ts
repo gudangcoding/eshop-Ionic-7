@@ -32,14 +32,14 @@ export class SignupPage implements OnInit {
       url: 'https://toko-amsis.my.id/api/member/register',
       headers: { 'Content-Type': 'application/json' },
       params: { 
-        enama:this.name,
+        nama:this.name,
         email : this.email,
         password:this.password,
         c_password:this.c_password,
       }
     };
   
-    const response: HttpResponse = await CapacitorHttp.get(options);
+    const response: HttpResponse = await CapacitorHttp.post(options);
     if (response.data.success==true) {
       this.util.dismissLoading();
       this.util.toastNotif('Daftar sukses');
