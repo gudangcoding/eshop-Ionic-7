@@ -218,7 +218,7 @@ export class CartPage implements OnInit {
 
   async bayar(): Promise<any> {
     this.util.showLoading();
-    const cartData = localStorage.getItem('cart');
+    // const cartData = localStorage.getItem('cart');
     // if (!cartData) {
     //   console.error('Cart data not found in local storage');
     //   return;
@@ -228,6 +228,7 @@ export class CartPage implements OnInit {
       this.akandibayar = this.products.filter(
         (product) => product.checked === true
       );
+
       // const dataToSend = {
       //   items: this.akandibayar,
       //   jumlah_harga: this.total,
@@ -255,6 +256,7 @@ export class CartPage implements OnInit {
       this.api
         .postWithToken(body, 'order/store', this.user.token)
         .subscribe((res:any) => {
+          this.util.dismissLoading();
           console.log(res);
           if (res.success==true) {
             this.delAll();
